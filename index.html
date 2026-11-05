@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A calm, simple place to keep track of what matters today."
+    />
+    <title>Little Wins — a task list for today</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="Little Wins home">
+          <span class="wordmark-mark" aria-hidden="true">✳</span>
+          little wins
+        </a>
+        <span class="topbar-note">A little progress adds up.</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">YOUR SPACE TO FOCUS</p>
+        <h1 id="page-title">Make room for <em>today.</em></h1>
+        <p class="intro-copy">
+          Keep your next steps close, and celebrate each one as it happens.
+        </p>
+      </section>
+
+      <section class="task-panel" aria-label="Your tasks">
+        <form class="add-form" id="task-form">
+          <label class="sr-only" for="task-title">What would you like to do?</label>
+          <input
+            id="task-title"
+            name="title"
+            type="text"
+            placeholder="What would you like to do?"
+            autocomplete="off"
+            required
+          />
+          <button class="add-button" type="submit">
+            <span aria-hidden="true">+</span>
+            Add task
+          </button>
+        </form>
+
+        <div class="list-heading">
+          <h2>Today’s list</h2>
+          <span class="task-count" id="task-count">0 tasks</span>
+        </div>
+
+        <nav class="filters" aria-label="Filter tasks">
+          <button class="filter-button is-active" type="button" data-status="all" aria-pressed="true">
+            All
+          </button>
+          <button class="filter-button" type="button" data-status="todo" aria-pressed="false">
+            To do
+          </button>
+          <button class="filter-button" type="button" data-status="in-progress" aria-pressed="false">
+            In progress
+          </button>
+          <button class="filter-button" type="button" data-status="done" aria-pressed="false">
+            Done
+          </button>
+        </nav>
+
+        <ul class="task-list" id="task-list" aria-live="polite"></ul>
+
+        <footer class="panel-footer">
+          <span class="footer-sparkle" aria-hidden="true">✦</span>
+          <span><strong id="remaining-count">0</strong> still to do. You’ve got this.</span>
+        </footer>
+      </section>
+
+      <p class="closing-note">One thing at a time is a lovely way to begin.</p>
+    </main>
+  </body>
+</html>
